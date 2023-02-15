@@ -1,0 +1,147 @@
+﻿namespace mamestagram_patcher
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 必要なデザイナー変数です。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 使用中のリソースをすべてクリーンアップします。
+        /// </summary>
+        /// <param name="disposing">マネージド リソースを破棄する場合は true を指定し、その他の場合は false を指定します。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows フォーム デザイナーで生成されたコード
+
+        /// <summary>
+        /// デザイナー サポートに必要なメソッドです。このメソッドの内容を
+        /// コード エディターで変更しないでください。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.shortcutPath = new System.Windows.Forms.TextBox();
+            this.lblFilePath = new System.Windows.Forms.Label();
+            this.btnSelectFile = new System.Windows.Forms.Button();
+            this.lblConnectServer = new System.Windows.Forms.Label();
+            this.cbSavePath = new System.Windows.Forms.CheckBox();
+            this.connectServer = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // shortcutPath
+            // 
+            this.shortcutPath.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.shortcutPath.Location = new System.Drawing.Point(12, 64);
+            this.shortcutPath.Name = "shortcutPath";
+            this.shortcutPath.Size = new System.Drawing.Size(182, 23);
+            this.shortcutPath.TabIndex = 0;
+            // 
+            // lblFilePath
+            // 
+            this.lblFilePath.AutoSize = true;
+            this.lblFilePath.Location = new System.Drawing.Point(12, 38);
+            this.lblFilePath.Name = "lblFilePath";
+            this.lblFilePath.Size = new System.Drawing.Size(173, 12);
+            this.lblFilePath.TabIndex = 1;
+            this.lblFilePath.Text = "osu!のファイルパスを指定してください";
+            // 
+            // btnSelectFile
+            // 
+            this.btnSelectFile.Location = new System.Drawing.Point(145, 96);
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.Size = new System.Drawing.Size(49, 23);
+            this.btnSelectFile.TabIndex = 2;
+            this.btnSelectFile.Text = "指定";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            // 
+            // lblConnectServer
+            // 
+            this.lblConnectServer.AutoSize = true;
+            this.lblConnectServer.Location = new System.Drawing.Point(10, 137);
+            this.lblConnectServer.Name = "lblConnectServer";
+            this.lblConnectServer.Size = new System.Drawing.Size(97, 12);
+            this.lblConnectServer.TabIndex = 3;
+            this.lblConnectServer.Text = "接続したいサーバー";
+            // 
+            // cbSavePath
+            // 
+            this.cbSavePath.AutoSize = true;
+            this.cbSavePath.Location = new System.Drawing.Point(12, 100);
+            this.cbSavePath.Name = "cbSavePath";
+            this.cbSavePath.Size = new System.Drawing.Size(95, 16);
+            this.cbSavePath.TabIndex = 4;
+            this.cbSavePath.Text = "パスを保存する";
+            this.cbSavePath.UseVisualStyleBackColor = true;
+            // 
+            // connectServer
+            // 
+            this.connectServer.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.connectServer.Location = new System.Drawing.Point(12, 164);
+            this.connectServer.Name = "connectServer";
+            this.connectServer.Size = new System.Drawing.Size(182, 23);
+            this.connectServer.TabIndex = 5;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 204);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 16);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "サーバーを保存する";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(43, 236);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(117, 35);
+            this.btnConnect.TabIndex = 8;
+            this.btnConnect.Text = "接続!";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(211, 283);
+            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.connectServer);
+            this.Controls.Add(this.cbSavePath);
+            this.Controls.Add(this.lblConnectServer);
+            this.Controls.Add(this.btnSelectFile);
+            this.Controls.Add(this.lblFilePath);
+            this.Controls.Add(this.shortcutPath);
+            this.Name = "Form1";
+            this.Text = "osu! Patcher";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox shortcutPath;
+        private System.Windows.Forms.Label lblFilePath;
+        private System.Windows.Forms.Button btnSelectFile;
+        private System.Windows.Forms.Label lblConnectServer;
+        private System.Windows.Forms.CheckBox cbSavePath;
+        private System.Windows.Forms.TextBox connectServer;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnConnect;
+    }
+}
+
