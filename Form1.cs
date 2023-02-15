@@ -48,6 +48,7 @@ namespace mamestagram_patcher
             else
             {
                 StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
+               
                 writePath.Write("");
                 writePath.Close();
             }
