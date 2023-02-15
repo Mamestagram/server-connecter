@@ -40,7 +40,9 @@
             // 
             // shortcutPath
             // 
+            this.shortcutPath.BackColor = System.Drawing.Color.Black;
             this.shortcutPath.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.shortcutPath.ForeColor = System.Drawing.SystemColors.Menu;
             this.shortcutPath.Location = new System.Drawing.Point(12, 64);
             this.shortcutPath.Name = "shortcutPath";
             this.shortcutPath.Size = new System.Drawing.Size(182, 23);
@@ -49,6 +51,9 @@
             // lblFilePath
             // 
             this.lblFilePath.AutoSize = true;
+            this.lblFilePath.BackColor = System.Drawing.Color.Transparent;
+            this.lblFilePath.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblFilePath.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblFilePath.Location = new System.Drawing.Point(12, 38);
             this.lblFilePath.Name = "lblFilePath";
             this.lblFilePath.Size = new System.Drawing.Size(173, 12);
@@ -68,6 +73,8 @@
             // lblConnectServer
             // 
             this.lblConnectServer.AutoSize = true;
+            this.lblConnectServer.BackColor = System.Drawing.Color.Transparent;
+            this.lblConnectServer.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lblConnectServer.Location = new System.Drawing.Point(10, 137);
             this.lblConnectServer.Name = "lblConnectServer";
             this.lblConnectServer.Size = new System.Drawing.Size(97, 12);
@@ -77,16 +84,20 @@
             // cbSavePath
             // 
             this.cbSavePath.AutoSize = true;
+            this.cbSavePath.BackColor = System.Drawing.Color.Transparent;
+            this.cbSavePath.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cbSavePath.Location = new System.Drawing.Point(12, 100);
             this.cbSavePath.Name = "cbSavePath";
             this.cbSavePath.Size = new System.Drawing.Size(95, 16);
             this.cbSavePath.TabIndex = 4;
             this.cbSavePath.Text = "パスを保存する";
-            this.cbSavePath.UseVisualStyleBackColor = true;
+            this.cbSavePath.UseVisualStyleBackColor = false;
             // 
             // connectServer
             // 
+            this.connectServer.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.connectServer.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.connectServer.ForeColor = System.Drawing.SystemColors.Info;
             this.connectServer.Location = new System.Drawing.Point(12, 164);
             this.connectServer.Name = "connectServer";
             this.connectServer.Size = new System.Drawing.Size(182, 23);
@@ -95,12 +106,14 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.checkBox1.Location = new System.Drawing.Point(12, 204);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(116, 16);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "サーバーを保存する";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.UseVisualStyleBackColor = false;
             // 
             // btnConnect
             // 
@@ -116,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(211, 283);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.checkBox1);
@@ -125,6 +139,9 @@
             this.Controls.Add(this.btnSelectFile);
             this.Controls.Add(this.lblFilePath);
             this.Controls.Add(this.shortcutPath);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "osu! Patcher";
             this.ResumeLayout(false);

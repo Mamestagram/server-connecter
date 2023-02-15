@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IWshRuntimeLibrary; //vs側でwindows script hostを参照する (未実行)
 using System.Windows.Forms;
 
 namespace mamestagram_patcher
