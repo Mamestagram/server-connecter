@@ -45,12 +45,17 @@ namespace mamestagram_patcher
 
         private void DataSaver()
         {
-            
             if (cbAddress.Checked)
             {
                 StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
 
                 writePath.Write(shortcutPath.Text);
+                writePath.Close();
+            }
+            else
+            {
+                StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
+                writePath.Write("");
                 writePath.Close();
             }
 
@@ -59,6 +64,13 @@ namespace mamestagram_patcher
                 StreamWriter writeAddress = new StreamWriter("data\\address.log", false ,System.Text.Encoding.GetEncoding("UTF-8"));
                 
                 writeAddress.Write(connectServer.Text);
+                writeAddress.Close();
+            }else
+            {
+                StreamWriter writeAddress = new StreamWriter("data\\address.log", false ,System.Text.Encoding.GetEncoding("UTF-8"));
+
+                
+                writeAddress.Write("");
                 writeAddress.Close();
             }
         }
@@ -83,6 +95,9 @@ namespace mamestagram_patcher
 
             connectServer.Text = address;
             shortcutPath.Text = path;
+
+            if (address != "") cbAddress.Checked = true;
+            if (path != "") cbSavePath.Checked = true;
             
             readAddress.Close();
             readPath.Close();
