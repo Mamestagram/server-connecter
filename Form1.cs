@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,12 +34,61 @@ namespace mamestagram_patcher
             }
         }
 
-        private void shortcutCreater()
+        private void ServerConnecter()
         {
             String path = shortcutPath.Text + "\\osu!.exe";
+            ProcessStartInfo processStartInfo = new ProcessStartInfo(path, " -devserver " + connectServer.Text);
 
+            Process.Start(processStartInfo);
+            Close();
         }
 
+        private void DataSaver()
+        {
+
+            StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
+            StreamWriter writeAddress = new StreamWriter("data\\address.log", false ,System.Text.Encoding.GetEncoding("UTF-8"));
+
+            if (cbAddress.Checked)
+            {
+                writePath.Write(shortcutPath.Text);
+                writePath.Close();
+            }
+
+            if (cbSavePath.Checked)
+            {
+                writeAddress.Write(connectServer.Text);
+                writeAddress.Close();
+            }
+        }
+
+        private void DataLoader()
+        {
+            String path = "";
+            String address = "";
+            
+            if (!Directory.Exists("data"))
+            {
+                Directory.CreateDirectory("data");
+                File.Create("data\\path.log");
+                File.Create("data\\address.log");
+                
+                return;
+            }
+
+            StreamReader readPath = new StreamReader("data\\path.log");
+            StreamReader readAddress = new StreamReader("data\\address.log");
+            
+            if(readPath.ReadLine() != "") path = readPath.ReadLine();
+            if(readAddress.ReadLine() != "") address = readAddress.ReadLine();
+
+            connectServer.Text = address;
+            shortcutPath.Text = path;
+            
+            readAddress.Close();
+            readPath.Close();
+        }
+        
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
             shortcutPath.Text = filePathSelector();
@@ -46,12 +97,19 @@ namespace mamestagram_patcher
         private void btnConnect_Click(object sender, EventArgs e)
         {
             if(shortcutPath.Text.Length != 0 && connectServer.Text.Length != 0)
-            {
-                
+            { 
+                DataSaver();
+                ServerConnecter();
+                Close();
             } else
             {
                 MessageBox.Show("入力値が不足しています!", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DataLoader();
         }
     }
 }

@@ -34,7 +34,7 @@
             this.lblConnectServer = new System.Windows.Forms.Label();
             this.cbSavePath = new System.Windows.Forms.CheckBox();
             this.connectServer = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbAddress = new System.Windows.Forms.CheckBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -45,6 +45,7 @@
             this.shortcutPath.ForeColor = System.Drawing.SystemColors.Menu;
             this.shortcutPath.Location = new System.Drawing.Point(12, 64);
             this.shortcutPath.Name = "shortcutPath";
+            this.shortcutPath.ReadOnly = true;
             this.shortcutPath.Size = new System.Drawing.Size(182, 23);
             this.shortcutPath.TabIndex = 0;
             // 
@@ -103,17 +104,17 @@
             this.connectServer.Size = new System.Drawing.Size(182, 23);
             this.connectServer.TabIndex = 5;
             // 
-            // checkBox1
+            // cbAddress
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox1.Location = new System.Drawing.Point(12, 204);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 16);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "サーバーを保存する";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.cbAddress.AutoSize = true;
+            this.cbAddress.BackColor = System.Drawing.Color.Transparent;
+            this.cbAddress.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.cbAddress.Location = new System.Drawing.Point(12, 204);
+            this.cbAddress.Name = "cbAddress";
+            this.cbAddress.Size = new System.Drawing.Size(116, 16);
+            this.cbAddress.TabIndex = 6;
+            this.cbAddress.Text = "サーバーを保存する";
+            this.cbAddress.UseVisualStyleBackColor = false;
             // 
             // btnConnect
             // 
@@ -132,7 +133,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(211, 283);
             this.Controls.Add(this.btnConnect);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbAddress);
             this.Controls.Add(this.connectServer);
             this.Controls.Add(this.cbSavePath);
             this.Controls.Add(this.lblConnectServer);
@@ -144,6 +145,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "osu! Patcher";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,7 +159,7 @@
         private System.Windows.Forms.Label lblConnectServer;
         private System.Windows.Forms.CheckBox cbSavePath;
         private System.Windows.Forms.TextBox connectServer;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbAddress;
         private System.Windows.Forms.Button btnConnect;
     }
 }
