@@ -45,18 +45,19 @@ namespace mamestagram_patcher
 
         private void DataSaver()
         {
-
-            StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
-            StreamWriter writeAddress = new StreamWriter("data\\address.log", false ,System.Text.Encoding.GetEncoding("UTF-8"));
-
+            
             if (cbAddress.Checked)
             {
+                StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
+
                 writePath.Write(shortcutPath.Text);
                 writePath.Close();
             }
 
             if (cbSavePath.Checked)
             {
+                StreamWriter writeAddress = new StreamWriter("data\\address.log", false ,System.Text.Encoding.GetEncoding("UTF-8"));
+                
                 writeAddress.Write(connectServer.Text);
                 writeAddress.Close();
             }
@@ -70,17 +71,15 @@ namespace mamestagram_patcher
             if (!Directory.Exists("data"))
             {
                 Directory.CreateDirectory("data");
-                File.Create("data\\path.log");
-                File.Create("data\\address.log");
-                
+
                 return;
             }
 
             StreamReader readPath = new StreamReader("data\\path.log");
             StreamReader readAddress = new StreamReader("data\\address.log");
             
-            if(readPath.ReadLine() != "") path = readPath.ReadLine();
-            if(readAddress.ReadLine() != "") address = readAddress.ReadLine();
+            path = readPath.ReadLine();
+            address = readAddress.ReadLine();
 
             connectServer.Text = address;
             shortcutPath.Text = path;
