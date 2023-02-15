@@ -40,14 +40,14 @@ namespace mamestagram_patcher
         {
             if (cbAddress.Checked)
             {
-                StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
+                StreamWriter writePath = new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
 
                 writePath.Write(shortcutPath.Text);
                 writePath.Close();
             }
             else
             {
-                StreamWriter writePath= new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
+                StreamWriter writePath = new StreamWriter("data\\path.log", false, System.Text.Encoding.GetEncoding("UTF-8"));
                
                 writePath.Write("");
                 writePath.Close();
