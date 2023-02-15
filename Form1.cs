@@ -68,7 +68,6 @@ namespace mamestagram_patcher
             }else
             {
                 StreamWriter writeAddress = new StreamWriter("data\\address.log", false ,System.Text.Encoding.GetEncoding("UTF-8"));
-
                 
                 writeAddress.Write("");
                 writeAddress.Close();
